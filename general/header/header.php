@@ -1,26 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site HTML avec Bootstrap</title>
-    <!-- Lien vers le CSS de Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="general/header/header.css" rel="stylesheet">
-     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-    <!-- Inclure la bibliothèque Leaflet -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-</head> 
-<body>
-
 <header>
     <nav>
         <div class="container">
             <div class="d-flex justify-content-start">
                 <div>
-                    <a href="/Hackathon/#">
-                        <img src="/Hackathon/general/header/logoHome.png" alt="logo" class="img-fluid" style="width: 100px;">
+                    <a href="/#">
+                        <img src="/general/header/logoHome.png" alt="logo" class="img-fluid" style="width: 100px;">
                     </a>
                 </div>
                 <div class="d-flex align-items-center mx-5" >
@@ -38,14 +22,11 @@
                       <li><button class="dropdown-item" type="button">Zone 5</button></li>
                     </ul>
                 </div>
-                <!-- <div class="d-flex align-items-center mx-5">
-                    <a href="/Hackathon/general/meteo/meteo.html">Meteo</a>
-                </div> -->
+                <div class="d-flex align-items-center mx-5">
+                    <a href="/general/meteo/meteo.php">Meteo</a>
+                </div>
             </div>
         </div>
     </nav>
 </header>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
