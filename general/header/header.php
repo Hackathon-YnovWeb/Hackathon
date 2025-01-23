@@ -11,6 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="general/header/javascript.js"></script>
     <script src="/general/header/javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <header class="bg-primary">
     <nav>
@@ -22,7 +24,7 @@
                     </a>
                 </div>
                 <div class="d-flex align-items-center mx-5">
-                    <a href="#" class="mx-auto">Chat</a>
+                    <a href="#" class="mx-auto">Activité</a>
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
