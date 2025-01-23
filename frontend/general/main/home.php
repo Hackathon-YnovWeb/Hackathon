@@ -2,7 +2,7 @@
     <h1>Prévention et Alerte Catastrophes : Protégeons Toulouse Ensemble</h1>
     <div class="d-flex">
         <div>
-            <img src="/general/main/toulousezone.png" alt="zone de toulouse" class="img-fluid d-block" width="100%">
+            <img src="frontend/general/main/toulousezone.png" alt="zone de toulouse" class="img-fluid d-block" width="100%">
         </div>
         <section>
             <p>En 2180, Toulouse, devenue une mégapole dynamique et en constante évolution, fait face à des risques accrus liés aux catastrophes naturelles et aux menaces technologiques. Inondations, tremblements de terre, cyberattaques et autres phénomènes dévastateurs représentent un danger permanent pour la sécurité des citoyens et la stabilité de la ville.</p>

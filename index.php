@@ -3,8 +3,8 @@
 <body>
 
 <?php
-    require 'general/header/header.php';
-    require 'general/main/home.php';
+    require 'frontend/general/header/header.php';
+    require 'frontend/general/main/home.php';
 ?>
 
 
