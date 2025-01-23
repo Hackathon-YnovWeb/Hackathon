@@ -6,10 +6,11 @@
     <title>Site HTML avec Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="general/header/header.css" rel="stylesheet">
-    <script src="/general/header/javascript.js"></script>
-    <!-- Inclure les fichiers CSS et JS dans le HTML -->
     <link rel="stylesheet" href="general/header/header.css">
+    <!-- Inclure les fichiers CSS et JS dans le HTML -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="general/header/javascript.js"></script>
+    <script src="/general/header/javascript.js"></script>
     
     <!-- Inclure la bibliothèque Leaflet -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> -->
