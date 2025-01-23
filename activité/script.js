@@ -28,7 +28,15 @@ function afficherActivites(activitesFiltrees) {
       <h2>${activite.nom}</h2>
       <p><strong>Type:</strong> ${activite.type}</p>
       <p><strong>Description:</strong> ${activite.description}</p>
-      <p><strong>Date:</strong> ${new Date(activite.dateEtHeure).toLocaleString()}</p>
+     <p><strong>Date:</strong> ${new Date(activite.dateEtHeure).toLocaleString('fr-FR', {
+  weekday: 'long', // Optionnel, pour afficher le jour de la semaine
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false, // Utilise ce paramètre si tu veux l'heure au format 24 heures
+})}</p>
       <p><strong>Danger:</strong> ${activite.danger}</p>
       <p><strong>Nombre de participants:</strong> <span id="participants-${activite.nom}">${activite.nombreDeParticipants}</span></p>
       <p><strong>Zone:</strong> ${activite.zone}</p>
