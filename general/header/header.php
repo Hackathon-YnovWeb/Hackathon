@@ -11,10 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="general/header/javascript.js"></script>
     <script src="/general/header/javascript.js"></script>
-    
-    <!-- Inclure la bibliothèque Leaflet -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> -->
-    <!-- <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> -->
+
 <header class="bg-primary">
     <nav>
         <div class="container">
@@ -39,15 +36,12 @@
                         <li><button class="dropdown-item" type="button">Zone 5</button></li>
                     </ul>
                 </div>
-                <div class="d-flex align-items-center mx-5">
-                    <a href="/general/meteo/meteo.php">Meteo</a>
-                </div>
             </div>
         </div>
     </nav>
 </header>
 
-<div id="alert-popup">
+<!-- <div id="alert-popup">
     <div id="alert-popup-content">
         <button id="alert-close">✕</button>
         <div class="alert-icons">
@@ -62,7 +56,7 @@
             <p id="alert-preventive-message"></p>
         </div>
     </div>
-</div>
+</div> -->
 
 <div id="flash-container" class="flash-container">
     <div id="flash-content" class="flash-content"></div>
