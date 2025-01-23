@@ -1,3 +1,4 @@
+   alert("test");
    let flashInfos = [];
     let rotationCount = 0;
     const MAX_ROTATIONS = 3;
