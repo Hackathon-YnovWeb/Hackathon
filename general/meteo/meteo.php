@@ -1,4 +1,4 @@
-<header id="header-container" class="bg-primary p-4"></header>
+<?php require 'general/header/header.php'; ?>
 <h1>Météo en Temps Réel à Toulouse</h1>
 <div id="map"></div>
 
