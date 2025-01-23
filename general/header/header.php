@@ -1,10 +1,9 @@
-
 <header>
     <nav>
         <div class="container">
             <div class="d-flex justify-content-start">
                 <div>
-                    <a href="/Hackathon/#">
+                    <a href="/#">
                         <img src="/general/header/logoHome.png" alt="logo" class="img-fluid" style="width: 100px;">
                     </a>
                 </div>
@@ -23,15 +22,11 @@
                       <li><button class="dropdown-item" type="button">Zone 5</button></li>
                     </ul>
                 </div>
-                <!-- <div class="d-flex align-items-center mx-5">
-                    <a href="/Hackathon/general/meteo/meteo.html">Meteo</a>
-                </div> -->
+                <div class="d-flex align-items-center mx-5">
+                    <a href="/general/meteo/meteo.php">Meteo</a>
+                </div>
             </div>
         </div>
     </nav>
 </header>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>

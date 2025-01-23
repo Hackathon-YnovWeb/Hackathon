@@ -3,12 +3,6 @@
 <div id="map"></div>
 
 <script>
-    fetch('/Hackathon/general/header/header.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-    })
-    .catch(error => console.error('Erreur lors du chargement du header:', error));
     // Initialisation de la carte Leaflet
     var map = L.map('map').setView([43.6047, 1.4442], 12);  // Coordonnées de Toulouse
 

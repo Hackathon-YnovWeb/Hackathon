@@ -1,12 +1,8 @@
-
-    <header id="header-container" class="bg-primary p-4"></header>
-  
-
 <div class="container">
     <h1>Prévention et Alerte Catastrophes : Protégeons Toulouse Ensemble</h1>
     <div class="d-flex">
         <div>
-            <img src="/Hackathon/general/main/toulousezone.png" alt="zone de toulouse" class="img-fluid d-block" width="100%">
+            <img src="/general/main/toulousezone.png" alt="zone de toulouse" class="img-fluid d-block" width="100%">
         </div>
         <section>
             <p>En 2180, Toulouse, devenue une mégapole dynamique et en constante évolution, fait face à des risques accrus liés aux catastrophes naturelles et aux menaces technologiques. Inondations, tremblements de terre, cyberattaques et autres phénomènes dévastateurs représentent un danger permanent pour la sécurité des citoyens et la stabilité de la ville.</p>
@@ -38,16 +34,4 @@
         </section>
     </div>
 
-
-
-    <!-- Lien vers le JS de Bootstrap -->
-    <script>
-        // Charger le fichier header.html
-        fetch('general/header/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            })
-            .catch(error => console.error('Erreur lors du chargement du header:', error));
-    </script>
 
