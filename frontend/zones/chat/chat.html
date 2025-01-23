@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Interface</title>
+  <link rel="stylesheet" href="chat.css">
+  <script src="https://kit.fontawesome.com/1f1ef13669.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>Chat Room</h1>
+      <i class="fa-regular fa-comment"></i>
+    </header>
+    <div class="chat-messages" id="chatMessages">
+      <!-- Messages will be appended dynamically -->
+    </div>
+    <div id="loadingSpinner" class="loading-spinner hidden">
+      <div class="spinner"></div>
+    </div>
+    <div id="errorMessage" class="error-message"></div>
+    <footer class="chat-footer">
+      <input 
+        type="text" 
+        id="messageInput" 
+        placeholder="Type your message..." 
+        autocomplete="off"
+      />
+      <button id="sendButton">Send</button>
+    </footer>
+  </div>
+  <script src="chat.js"></script>
+</body>
+</html>
