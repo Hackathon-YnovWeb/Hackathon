@@ -1,6 +1,6 @@
-<?php require '../../general/header/header.php'; ?>
+<?php require './frontend/general/header/header.php'; ?>
 <head>
-  <link rel="stylesheet" href="chat.css">
+  <link rel="stylesheet" href="/frontend/zones/chat/chat.css">
 </head>
 <body>
   <div class="chat-container">
@@ -25,6 +25,6 @@
       <button id="sendButton">Send</button>
     </footer>
   </div>
-  <script src="chat.js"></script>
+  <script src="/frontend/zones/chat/chat.js"></script>
 </body>
 </html>
