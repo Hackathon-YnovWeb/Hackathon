@@ -6,8 +6,8 @@
     <title>Site HTML avec Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="frontend/general/header/header.css" rel="stylesheet">
-    <link rel="stylesheet" href="frontend/general/header/header.css">
     <!-- Inclure les fichiers CSS et JS dans le HTML -->
+    <script src="https://kit.fontawesome.com/1f1ef13669.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="frontend/general/header/javascript.js"></script>
     <script src="frontend/general/header/javascript.js"></script>
@@ -20,22 +20,22 @@
             <div class="d-flex justify-content-start">
                 <div>
                     <a href="/#">
-                        <img src="frontend/general/header/logoHome.png" alt="logo" class="img-fluid" style="width: 100px;">
+                        <img src="/frontend/general/header/logoHome.png" alt="logo" class="img-fluid" style="width: 100px;">
                     </a>
                 </div>
                 <div class="d-flex align-items-center mx-5">
-                    <a href="#" class="mx-auto">Activité</a>
+                    <a href="/frontend/activité/activite.php" class="mx-auto">Activité</a>
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         Zone
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><button class="dropdown-item" type="button">Zone 1</button></li>
-                        <li><button class="dropdown-item" type="button">Zone 2</button></li>
-                        <li><button class="dropdown-item" type="button">Zone 3</button></li>
-                        <li><button class="dropdown-item" type="button">Zone 4</button></li>
-                        <li><button class="dropdown-item" type="button">Zone 5</button></li>
+                        <li><a href="/frontend/zones/chat/chat.php">Zone 1</a></li>
+                        <li><a href="/frontend/zones/chat/chat.php">Zone 2</a></li>
+                        <li><a href="/frontend/zones/chat/chat.php">Zone 3</a></li>
+                        <li><a href="/frontend/zones/chat/chat.php">Zone 4</a></li>
+                        <li><a href="/frontend/zones/chat/chat.php">Zone 5</a></li>
                     </ul>
                 </div>
             </div>
