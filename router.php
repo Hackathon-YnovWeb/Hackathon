@@ -8,13 +8,16 @@ if (file_exists(__DIR__ . $request) && !is_dir(__DIR__ . $request)) {
 }
 
 switch ($request) {
-    case '/':
+   case '/':
         require __DIR__ . '/index.php';
         break;
-    case '/zones':
+   case '/zones':
         require __DIR__ . '/frontend/zones/chat/chat.php';
         break;
-    default:
+   case '/api/chat':
+        require __DIR__ . '/backend/api/chat_api.php';
+        break;
+   default:
         http_response_code(404);
         require __DIR__ . '/404.php';
         break;

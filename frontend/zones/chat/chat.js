@@ -5,7 +5,7 @@ const loadingSpinner = document.getElementById('loadingSpinner');
 const errorMessage = document.getElementById('errorMessage');
 
 // API endpoint
-const API_ENDPOINT = 'http://localhost/hackathonweb/backend/api/chat_api.php';
+const API_ENDPOINT = '/api/chat';
 
 // Handle sending messages
 sendButton.addEventListener('click', () => {

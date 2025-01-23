@@ -1,6 +1,6 @@
 <?php
 // Include the database configuration
-require_once '../config/config.php';
+require_once 'backend/config/config.php';
 
 // Set headers for JSON response and CORS
 header('Content-Type: application/json');
