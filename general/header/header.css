@@ -1,0 +1,8 @@
+nav .container div a{
+    color: white;
+    text-decoration: none;
+}
+nav .container div a:hover{
+    color: black;
+    text-decoration: underline;
+}
