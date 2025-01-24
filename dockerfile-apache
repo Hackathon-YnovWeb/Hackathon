@@ -1,0 +1,5 @@
+# PHP / Apache image
+FROM php:8.1-apache
+
+# Enable mysqli
+RUN docker-php-ext-install mysqli
