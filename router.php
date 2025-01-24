@@ -1,6 +1,7 @@
 <?php
 // Fichier : router.php
-$request = $_SERVER['REQUEST_URI']; // Récupère l'URL demandée
+$request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); // Ne garde que le chemin sans query string
+error_log($_SERVER['REQUEST_URI']);
 
 // Si le fichier demandé existe, le servir directement
 if (file_exists(__DIR__ . $request) && !is_dir(__DIR__ . $request)) {
@@ -8,18 +9,30 @@ if (file_exists(__DIR__ . $request) && !is_dir(__DIR__ . $request)) {
 }
 
 switch ($request) {
-   case '/':
+    case '/':
         require __DIR__ . '/index.php';
         break;
-   case '/zones':
+    case '/zones':
         require __DIR__ . '/frontend/zones/chat/chat.php';
         break;
-   case '/api/chat':
+    case '/zone':
+        require __DIR__ . '/frontend/zones/zone.php';
+        break;
+    case '/api/chat':
         require __DIR__ . '/backend/api/chat_api.php';
         break;
-   default:
+    case '/api/load-init-info':
+        require __DIR__ . '/backend/api/info/load_init.php';
+        break;
+    case '/api/stream-info':
+        require __DIR__ . '/backend/api/info/stream_info.php';
+        break;
+    case '/api/add-info':
+        require __DIR__ . '/backend/api/info/insert.php';
+        break;
+    default:
         http_response_code(404);
-        require __DIR__ . '/404.php';
+        echo json_encode(['error' => 'Page not found']);
         break;
 }
 ?>
