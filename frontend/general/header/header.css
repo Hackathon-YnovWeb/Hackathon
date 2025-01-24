@@ -23,12 +23,16 @@ nav .container div a:hover{
     align-items: center;
     animation: pulse 2s infinite;
 }
+.hidden {
+    display: none;
+}
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.02); }
     100% { transform: scale(1); }
 }
 #alert-popup-content {
+    display: hidden;
     background-color: white;
     color: black;
     padding: 30px;

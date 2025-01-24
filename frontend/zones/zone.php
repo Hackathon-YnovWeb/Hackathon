@@ -56,11 +56,3 @@ if ($zone < 1 || $zone > 5) {
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-

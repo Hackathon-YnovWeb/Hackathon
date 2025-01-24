@@ -1,3 +1,11 @@
+<?php
+require_once 'backend/config/config.php';
+?>
+   <!-- Inclusion de jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Ton fichier JavaScript -->
+    <script src="/frontend/general/header/javascript.js" defer></script>
+
 <header class="bg-primary">
     <nav>
         <div class="container">
@@ -27,7 +35,7 @@
     </nav>
 </header>
 
-<!-- <div id="alert-popup">
+<div id="alert-popup">
     <div id="alert-popup-content">
         <button id="alert-close">✕</button>
         <div class="alert-icons">
@@ -42,7 +50,7 @@
             <p id="alert-preventive-message"></p>
         </div>
     </div>
-</div> -->
+</div>
 
 <div id="flash-container" class="flash-container">
     <div id="flash-content" class="flash-content"></div>

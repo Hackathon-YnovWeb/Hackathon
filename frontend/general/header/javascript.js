@@ -1,18 +1,28 @@
 $(document).ready(() => {
-    // Charger le JSON et démarrer la rotation des nouvelles
-    $.getJSON('./general/footer/flash_infos.json', (data) => {
-        startNewsRotation(data.flash_infos);
-    }).fail(() => {
-        console.error('Erreur de chargement du JSON');
-        $('#flash-container').removeClass('active');
-    });
+    $('#alert-popup').css('display', 'none');
+    function fetchAndRotateNews() {
+        $.ajax({
+            url: '/frontend/general/header/fetch_flash_infos.php',
+            method: 'GET',
+            success: (data) => {
+                startNewsRotation(data.flash_infos);
+            },
+            error: () => {
+                console.error('Erreur de chargement des flash infos');
+                $('#flash-container').removeClass('active');
+            }
+        });
+    }
+ 
+    fetchAndRotateNews();
 
-    // Fermer la popup lorsque le bouton de fermeture est cliqué
+    setInterval(fetchAndRotateNews, 30000);
+
+   
     $('#alert-close').on('click', () => {
         $('#alert-popup').css('display', 'none');
     });
 
-    // Fonction pour démarrer la rotation des nouvelles
     function startNewsRotation(flashInfos) {
         if (flashInfos.length === 0) {
             $('#flash-container').removeClass('active');
@@ -21,40 +31,48 @@ $(document).ready(() => {
 
         const level5Infos = flashInfos.filter(info => info.niveau === "5" && !info.shown);
 
-        // Réinitialiser les messages de niveau 5 après rotation
+    if (level5Infos.length === 0) {
+        $('#flash-container').removeClass('active');
+        return;
+    }
         if (level5Infos.length === 0) {
             flashInfos.forEach(info => {
                 if (info.niveau === "5") info.shown = false;
             });
         }
-
+     
+      
         const info = level5Infos.length > 0 
             ? level5Infos[Math.floor(Math.random() * level5Infos.length)]
             : flashInfos[Math.floor(Math.random() * flashInfos.length)];
-
+       
         $('#flash-content').html(`
             <span class="breaking">FLASH INFOS</span>
             <span class="flash-text">${info.nom} : ${info.description} (Niveau: ${info.niveau})</span>
         `);
-
+        
         $('#flash-container').addClass('active');
 
-        setTimeout(() => {
+        
             $('#flash-content').addClass('scrolling');
-
-            if (info.niveau === "5" && $('#alert-popup').css('display') === 'none') {
-                $('#alert-title').text(`ALERTE NIVEAU ${info.niveau} : ${info.nom}`);
-                $('#alert-description').text(info.description);
-                $('#alert-preventive-message').text(getPreventiveMessage(info.nom));
-                $('#alert-popup').css('display', 'flex');
-                info.shown = true;
-            }
-        }, 100);
+            if(info.nom !=null ){
+                if (info.niveau === "5" && $('#alert-popup').css('display') === 'none') {
+                    setTimeout(() => {
+                        $('#alert-title').text(`ALERTE NIVEAU ${info.niveau} : ${info.nom}`);
+                        $('#alert-description').text(info.description);
+                        $('#alert-preventive-message').text(getPreventiveMessage(info.nom));
+                        $('#alert-popup').css('display', 'flex');
+                        info.shown = true;
+                    }, 5000);  
+                }
+                
+                
+           
+        }
 
         setupRotationTimer(flashInfos);
     }
 
-    // Fonction pour obtenir un message préventif
     function getPreventiveMessage(category) {
         const messages = {
             "Météo": "Restez à l'abri et suivez les recommandations des autorités locales. Préparez un kit de survie de base.",
@@ -71,7 +89,6 @@ $(document).ready(() => {
         return messages[category] || "Restez vigilant et suivez les recommandations des autorités compétentes.";
     }
 
-    // Fonction pour gérer le minuteur de rotation
     function setupRotationTimer(flashInfos) {
         let rotationCount = 0;
         const MAX_ROTATIONS = 3;
