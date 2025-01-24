@@ -13,7 +13,7 @@ if ($zone < 1 || $zone > 5) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>░▒▓ ZONE <?php echo $zone; ?></title>
-
+ 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="frontend/general/header/header.css" rel="stylesheet">
     <link rel="stylesheet" href="/frontend/zones/infos/info.css">
@@ -21,7 +21,9 @@ if ($zone < 1 || $zone > 5) {
 </head>
 <body>
     <?php require 'frontend/general/header/header.php';?>
-
+    <?php
+require_once 'backend/config/config.php';
+?>
     <div class="cyber-grid"></div>
     <h1 class="title">░▒▓█ SYSTÈME DE SURVEILLANCE ZONE <?php echo $zone; ?> █▓▒░</h1>
     <div class="info-container" id="info-list"></div>
