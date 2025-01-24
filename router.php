@@ -37,7 +37,7 @@ switch ($request) {
         require __DIR__ . '/backend/api/activites/activities.php';
         break;
     case '/api/update_activite':
-        require __DIR__ . '/backend/api/info/insert.php';
+        require __DIR__ . '/backend/api/activites/update.php';
         break;
     default:
         http_response_code(404);
