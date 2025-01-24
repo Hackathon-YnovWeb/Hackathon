@@ -23,11 +23,11 @@ $(document).ready(() => {
           const inscrit = localStorage.getItem(`activite-${activite.nom}`) === 'true';
 
           const card = `
-              <div class="activity-card">
-                  <h2>${activite.nom}</h2>
-                  <p><strong>Type:</strong> ${activite.type}</p>
-                  <p><strong>Description:</strong> ${activite.description}</p>
-                  <p><strong>Date:</strong> ${new Date(activite.dateEtHeure).toLocaleString('fr-FR', {
+              <div class="activity-card bg-light p-3 m-3">
+                  <h2 class="mt-0">${activite.nom}</h2>
+                  <p class="my-2"><strong>Type:</strong> ${activite.type}</p>
+                  <p class="my-2"><strong>Description:</strong> ${activite.description}</p>
+                  <p class="my-2"><strong>Date:</strong> ${new Date(activite.dateEtHeure).toLocaleString('fr-FR', {
                       weekday: 'long',
                       year: 'numeric',
                       month: 'long',
@@ -36,13 +36,13 @@ $(document).ready(() => {
                       minute: '2-digit',
                       hour12: false,
                   })}</p>
-                  <p><strong>Danger:</strong> ${activite.danger}</p>
-                  <p><strong>Nombre de participants:</strong> 
+                  <p class="my-2"><strong>Danger:</strong> ${activite.danger}</p>
+                  <p class="my-2"><strong>Nombre de participants:</strong> 
                       <span id="participants-${activite.nom}">${activite.nombreDeParticipants}</span>
                   </p>
-                  <p><strong>Zone:</strong> ${activite.zone}</p>
-                  <button class="inscrire" data-nom="${activite.nom}" ${inscrit ? 'disabled' : ''}>S'inscrire</button>
-                  <button class="desinscrire" data-nom="${activite.nom}">Se désinscrire</button>
+                  <p class="my-2"><strong>Zone:</strong> ${activite.zone}</p>
+                  <button type="button" class="btn btn-success"  data-nom="${activite.nom}" ${inscrit ? 'disabled' : ''}>S'inscrire</button>
+                  <button type="button" class="btn btn-warning" data-nom="${activite.nom}">Se désinscrire</button>
               </div>
           `;
           $container.append(card);

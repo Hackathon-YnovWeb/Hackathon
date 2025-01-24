@@ -1,8 +1,3 @@
-<?php require './frontend/general/header/header.php'; ?>
-<head>
-  <link rel="stylesheet" href="/frontend/zones/chat/chat.css">
-</head>
-<body>
   <div class="chat-container">
     <header class="chat-header">
       <h1>Chat Room</h1>
@@ -26,5 +21,3 @@
     </footer>
   </div>
   <script src="/frontend/zones/chat/chat.js"></script>
-</body>
-</html>
