@@ -49,7 +49,9 @@ Hackathon/
         |                  └── infos/
         ├── backend/ 
         |          ├── api/
-        |          |     └── info/  
+        |          |     ├── chat/ 
+        |          |     └── info/
+        |          |      
         |          └── config/
         ├── docker-compose.yml
         ├── dockerfile-apache
@@ -59,7 +61,7 @@ Hackathon/
         ├── mariadb-doc.md
         ├── README.adoc
         ├── README.md
-        └── *router.php* (à voir)
+        └── router.php
 ```
 ### Points forts de l'architecture :
 - Chaque développeur peut avancer sur sa partie sans interférer avec celle des autres.  
