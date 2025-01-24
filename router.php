@@ -15,6 +15,9 @@ switch ($request) {
     case '/zone':
         require __DIR__ . '/frontend/zones/zone.php';
         break;
+    case '/api/flash-infos':
+        require __DIR__ . '/backend/api/info/fetch_flash_infos.php';
+        break;
     case '/api/chat':
         require __DIR__ . '/backend/api/chat/chat_api.php';
         break;

@@ -1,5 +1,13 @@
-# MariaDB image
 FROM mariadb:10.4
+
+# Pour se connecter en tant que super admin
+ENV MYSQL_ROOT_PASSWORD=AdminHackathon
+# Accès uniquement à la base "hackathon"
+ENV MYSQL_PASSWORD=Hackathon
+
+ENV MYSQL_DATABASE=hackathon
+ENV MYSQL_USER=admin
+
 
 # Copie du script SQL d'initialisation
 COPY ./init.sql /docker-entrypoint-initdb.d/

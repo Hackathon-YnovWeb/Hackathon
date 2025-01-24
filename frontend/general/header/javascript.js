@@ -2,7 +2,7 @@ $(document).ready(() => {
     $('#alert-popup').css('display', 'none');
     function fetchAndRotateNews() {
         $.ajax({
-            url: '/frontend/general/header/fetch_flash_infos.php',
+            url: '/api/flash-infos',
             method: 'GET',
             success: (data) => {
                 startNewsRotation(data.flash_infos);

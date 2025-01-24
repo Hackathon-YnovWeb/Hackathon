@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 
-require_once '../../../backend/config/config.php';
+require_once 'backend/config/config.php';
 try {
    
     $stmt = $conn->prepare("
