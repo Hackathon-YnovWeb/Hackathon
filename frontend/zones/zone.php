@@ -7,24 +7,10 @@ if ($zone < 1 || $zone > 5) {
 }
 ?>
 
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>░▒▓ ZONE <?php echo $zone; ?></title>
-
-    <!-- Styles -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="frontend/general/header/header.css" rel="stylesheet">
-    <link rel="stylesheet" href="/frontend/zones/chat/chat.css">
-    <link rel="stylesheet" href="/frontend/zones/infos/info.css">
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-    <?php require 'frontend/general/header/header.php';?>
+<?php 
+$titiPage = "Zone $zone";
+require './frontend/general/header/header.php';
+ ?>
 
     <div class="container-fluid">
         <div class="row">
