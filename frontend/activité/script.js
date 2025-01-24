@@ -1,104 +1,101 @@
 // script.js
-let activites = []; // Contiendra les données JSON
+$(document).ready(() => {
+  let activites = []; // Contiendra les données JSON
 
-// Charger les données depuis un fichier JSON
-async function chargerActivites() {
-  try {
-    const response = await fetch('ActivitesCatastrophes.json');
-    if (!response.ok) throw new Error('Erreur réseau');
-    activites = await response.json();
-    afficherActivites(activites.activitesDroles);
-  } catch (error) {
-    console.error('Erreur lors du chargement des activités:', error);
+  // Charger les données depuis un fichier JSON
+  function chargerActivites() {
+      $.getJSON('ActivitesCatastrophes.json')
+          .done((data) => {
+              activites = data;
+              afficherActivites(activites.activitesDroles);
+          })
+          .fail((error) => {
+              console.error('Erreur lors du chargement des activités:', error);
+          });
   }
-}
 
-// Afficher les activités dans le conteneur
-function afficherActivites(activitesFiltrees) {
-  const container = document.getElementById('activites-container');
-  container.innerHTML = ''; // Réinitialise le contenu avant d'afficher
-  activitesFiltrees.forEach(activite => {
-    const card = document.createElement('div');
-    card.className = 'activity-card';
+  // Afficher les activités dans le conteneur
+  function afficherActivites(activitesFiltrees) {
+      const $container = $('#activites-container');
+      $container.empty(); // Réinitialise le contenu avant d'afficher
 
-    // Vérifier si l'utilisateur est déjà inscrit (localStorage)
-    const inscrit = localStorage.getItem(`activite-${activite.nom}`) === 'true';
+      activitesFiltrees.forEach((activite) => {
+          const inscrit = localStorage.getItem(`activite-${activite.nom}`) === 'true';
 
-    card.innerHTML = `
-      <h2>${activite.nom}</h2>
-      <p><strong>Type:</strong> ${activite.type}</p>
-      <p><strong>Description:</strong> ${activite.description}</p>
-     <p><strong>Date:</strong> ${new Date(activite.dateEtHeure).toLocaleString('fr-FR', {
-  weekday: 'long', // Optionnel, pour afficher le jour de la semaine
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  hour: '2-digit',
-  minute: '2-digit',
-  hour12: false, // Utilise ce paramètre si tu veux l'heure au format 24 heures
-})}</p>
-      <p><strong>Danger:</strong> ${activite.danger}</p>
-      <p><strong>Nombre de participants:</strong> <span id="participants-${activite.nom}">${activite.nombreDeParticipants}</span></p>
-      <p><strong>Zone:</strong> ${activite.zone}</p>
-      <button class="inscrire" onclick="sInscrire('${activite.nom}')">S'inscrire</button>
-      <button class="desinscrire" onclick="seDesinscrire('${activite.nom}')">Se désinscrire</button>
-    `;
+          const card = `
+              <div class="activity-card">
+                  <h2>${activite.nom}</h2>
+                  <p><strong>Type:</strong> ${activite.type}</p>
+                  <p><strong>Description:</strong> ${activite.description}</p>
+                  <p><strong>Date:</strong> ${new Date(activite.dateEtHeure).toLocaleString('fr-FR', {
+                      weekday: 'long',
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                      hour12: false,
+                  })}</p>
+                  <p><strong>Danger:</strong> ${activite.danger}</p>
+                  <p><strong>Nombre de participants:</strong> 
+                      <span id="participants-${activite.nom}">${activite.nombreDeParticipants}</span>
+                  </p>
+                  <p><strong>Zone:</strong> ${activite.zone}</p>
+                  <button class="inscrire" data-nom="${activite.nom}" ${inscrit ? 'disabled' : ''}>S'inscrire</button>
+                  <button class="desinscrire" data-nom="${activite.nom}">Se désinscrire</button>
+              </div>
+          `;
+          $container.append(card);
+      });
+  }
 
-    // Désactiver le bouton d'inscription si déjà inscrit
-    if (inscrit) {
-      card.querySelector('.inscrire').disabled = true;
-    }
+  // Gérer l'inscription
+  $(document).on('click', '.inscrire', function () {
+      const nomActivite = $(this).data('nom');
+      const $participantsElement = $(`#participants-${nomActivite}`);
+      const nombreDeParticipants = parseInt($participantsElement.text(), 10);
 
-    container.appendChild(card);
+      // Mettre à jour le nombre de participants
+      $participantsElement.text(nombreDeParticipants + 1);
+
+      // Mémoriser l'inscription dans localStorage
+      localStorage.setItem(`activite-${nomActivite}`, 'true');
+
+      // Désactiver le bouton d'inscription
+      $(this).prop('disabled', true);
   });
-}
 
-// Gérer l'inscription
-function sInscrire(nomActivite) {
-  const participantsElement = document.getElementById(`participants-${nomActivite}`);
-  const nombreDeParticipants = parseInt(participantsElement.textContent, 10);
+  // Gérer la désinscription
+  $(document).on('click', '.desinscrire', function () {
+      const nomActivite = $(this).data('nom');
+      const $participantsElement = $(`#participants-${nomActivite}`);
+      const nombreDeParticipants = parseInt($participantsElement.text(), 10);
 
-  // Mettre à jour le nombre de participants
-  participantsElement.textContent = nombreDeParticipants + 1;
+      // Mettre à jour le nombre de participants
+      $participantsElement.text(Math.max(0, nombreDeParticipants - 1));
 
-  // Mémoriser l'inscription dans localStorage
-  localStorage.setItem(`activite-${nomActivite}`, 'true');
+      // Supprimer l'inscription dans localStorage
+      localStorage.removeItem(`activite-${nomActivite}`);
 
-  // Désactiver le bouton d'inscription
-  chargerActivites();
-}
+      // Réactiver le bouton d'inscription
+      $(`.inscrire[data-nom="${nomActivite}"]`).prop('disabled', false);
+  });
 
-// Gérer la désinscription
-function seDesinscrire(nomActivite) {
-  const participantsElement = document.getElementById(`participants-${nomActivite}`);
-  const nombreDeParticipants = parseInt(participantsElement.textContent, 10);
+  // Filtrer les activités par zone
+  function filtrerParZone(zone = null) {
+      let activitesFiltrees;
 
-  // Mettre à jour le nombre de participants
-  participantsElement.textContent = Math.max(0, nombreDeParticipants - 1);
+      // Si aucune zone n'est fournie, afficher toutes les activités
+      if (zone === null) {
+          activitesFiltrees = activites.activitesDroles;
+      } else {
+          // Filtrer uniquement les activités correspondant à la zone donnée
+          activitesFiltrees = activites.activitesDroles.filter((activite) => activite.zone === zone);
+      }
 
-  // Supprimer l'inscription dans localStorage
-  localStorage.removeItem(`activite-${nomActivite}`);
-
-  // Réactiver le bouton d'inscription
-  chargerActivites();
-}
-
-
-// Filtrer les activités par zone
-function filtrerParZone(zone = null) {
-    let activitesFiltrees;
-  
-    // Si aucune zone n'est fournie, afficher toutes les activités
-    if (zone === null) {
-      activitesFiltrees = activites.activitesDroles;
-    } else {
-      // Filtrer uniquement les activités correspondant à la zone donnée
-      activitesFiltrees = activites.activitesDroles.filter(activite => activite.zone === zone);
-    }
-  
-    afficherActivites(activitesFiltrees);
+      afficherActivites(activitesFiltrees);
   }
-  
 
-// Charger les activités au démarrage
-chargerActivites();
+  // Charger les activités au démarrage
+  chargerActivites();
+});
