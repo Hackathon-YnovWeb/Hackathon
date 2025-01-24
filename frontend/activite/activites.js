@@ -78,6 +78,8 @@ function creerCarteActivite(activite) {
     return card;
 }
 
+
+
 function afficherErreur(message) {
     const container = document.getElementById('activites-container');
     container.innerHTML = `<p class="error">${message}</p>`;

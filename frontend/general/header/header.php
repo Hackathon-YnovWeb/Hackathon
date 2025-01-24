@@ -31,7 +31,7 @@ require_once 'backend/config/config.php';
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active px-4" href="/frontend/activité/activite.php">Activité
+          <a class="nav-link active px-4" href="activites">Activité
             <span class="visually-hidden">(current)</span>
           </a>
         </li>

@@ -176,7 +176,7 @@ const DISASTER_TYPES = {
     },
     TSUNAMI: {
         name: 'tsunami',
-        allowedZones: [1, 2], // Zones côtières uniquement
+        allowedZones: [1, 2],
         intensityUnit: 'mètres',
         minIntensity: 3,
         maxIntensity: 30,

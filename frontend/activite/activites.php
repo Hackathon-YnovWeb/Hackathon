@@ -1,6 +1,6 @@
 <?php 
 $titrePage = "Activités Catastrophes Naturelles";
-require '../general/header/header.php'; 
+require 'frontend/general/header/header.php';
 ?>
   <header>
     <div class="container">
@@ -18,7 +18,7 @@ require '../general/header/header.php';
       <div id="activites-container" class="d-flex flex-wrap justify-content-center p-2"></div>
     </main>
     </div>
-  <script src="script.js"></script>
+  <script src="frontend/activite/activites.js"></script>
 </body>
 </html>
 
