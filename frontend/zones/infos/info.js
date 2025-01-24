@@ -40,7 +40,7 @@ class InfoManager {
         const newContent = this.infos.map((info, index) => `
                     <div class="info-card danger-${info.niveauDanger} ${index === 0 ? 'new-card' : 'existing-card'}" data-id="${info.id}">
                         <div class="info-header">
-                            <h3>${info.nom}</h3>
+                              <h3 class="title-info-card-h3">${info.nom}</h3>
                             <span class="zone-badge">${dangerText[info.niveauDanger-1]}</span>
                         </div>
                         <p>${info.description}</p>
