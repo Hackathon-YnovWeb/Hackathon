@@ -6,7 +6,7 @@ require '../general/header/header.php';
     <div class="container">
       <h1>Activités Catastrophes Naturelles</h1>
       <div class="filter-buttons my-3">
-        <button type="button" class="btn btn-light me-2 mb-lg-" onclick="filtrerParZone()">Toutes les zones</button>
+        <button type="button" class="btn btn-light me-2 " onclick="filtrerParZone()">Toutes les zones</button>
         <button type="button" class="btn btn-light mx-2" onclick="filtrerParZone(1)">Zone 1</button>
         <button type="button" class="btn btn-light mx-2" onclick="filtrerParZone(2)">Zone 2</button>
         <button type="button" class="btn btn-light mx-2" onclick="filtrerParZone(3)">Zone 3</button>

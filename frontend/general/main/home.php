@@ -12,7 +12,7 @@
     </div>
     
         <section>
-            <h2>Nos Solutions : Des Technologies Innovantes pour Votre Sécurité</h2>
+            <h2 class="text-light">Nos Solutions : Des Technologies Innovantes pour Votre Sécurité</h2>
             <ul>
                 <li><strong>Alertes en temps réel</strong> : Recevez des notifications instantanées sur les risques imminents, que ce soit pour les inondations, les tremblements de terre ou des menaces cybernétiques.</li>
                 <li><strong>Prévisions météo avancées</strong> : Grâce à des algorithmes de prévision climatique, nous vous informons des conditions dangereuses à venir, pour vous permettre de prendre des mesures de précaution.</li>
@@ -22,12 +22,12 @@
         </section>
     
         <section>
-            <h2>Soyez Prêt, Soyez Alerte</h2>
+            <h2  class="text-light">Soyez Prêt, Soyez Alerte</h2>
             <p>Ne laissez pas la peur de l’inconnu vous paralyser. En vous inscrivant sur notre plateforme, vous vous assurez de recevoir des alertes personnalisées et des conseils pratiques pour faire face à toutes les situations d’urgence. La connaissance est notre meilleure arme pour sauver des vies et minimiser les dégâts.</p>
         </section>
     
         <section>
-            <h2>Ensemble, Préservons Toulouse</h2>
+            <h2  class="text-light">Ensemble, Préservons Toulouse</h2>
             <p>Chaque citoyen joue un rôle essentiel dans la protection de notre ville. En étant informé, préparé et en suivant les consignes de sécurité, nous pouvons ensemble faire en sorte que Toulouse soit prête à faire face à tous les dangers, qu'ils viennent de la nature ou du cyberespace.</p>
             <a href="#" class="cta">Rejoignez-nous pour un Toulouse plus sûr</a>
         </section>
