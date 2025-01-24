@@ -1,17 +1,15 @@
 version: '3.3'
 services:
 
-  # Apache / PHP container
-  apache:
+  # PHP container
+  app:
     build:
       context: .
       dockerfile: dockerfile
-    container_name: apache
+    container_name: php
     depends_on:
       - db
-    image: apache-hackathon:latest # Custom php-apache image
-    volumes:
-      - .:/var/www/html/
+    image: php-hackathon:latest # Custom php image
     ports:
       - "80:80"
 
