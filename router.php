@@ -12,14 +12,11 @@ switch ($request) {
     case '/':
         require __DIR__ . '/index.php';
         break;
-    case '/zones':
-        require __DIR__ . '/frontend/zones/chat/chat.php';
-        break;
     case '/zone':
         require __DIR__ . '/frontend/zones/zone.php';
         break;
     case '/api/chat':
-        require __DIR__ . '/backend/api/chat_api.php';
+        require __DIR__ . '/backend/api/chat/chat_api.php';
         break;
     case '/api/load-init-info':
         require __DIR__ . '/backend/api/info/load_init.php';
