@@ -84,7 +84,7 @@ Nous avons opté pour un site **entièrement frontend**, basé sur les contraint
 - **CSS & Bootstrap :** Pour le design et une mise en page responsive.
 - **JavaScript :** Pour l'interactivité et la logique côté client.
 - **PHP :** Pour gérer les opérations backend et l'interaction avec la base de données.
- 
+
 ## 4. Fonctionnalités.
  
 Le site propose **trois fonctionnalités principales** :  
@@ -92,3 +92,40 @@ Le site propose **trois fonctionnalités principales** :
 1. **Visualisation des informations** sur les catastrophes naturelles, triées par zone.  
 2. **Chat en temps réel** pour échanger avec d'autres utilisateurs selon la zone sélectionnée.  
 3. **Découverte d'activités** à faire dans les zones concernées.  
+
+## 5. Structure de la Base de Données
+
+La base contient trois tables :
+
+1. **messages**
+   - id (AUTO_INCREMENT)
+   - author (VARCHAR)
+   - text (TEXT)
+   - time (DATETIME)
+
+2. **info**
+   - id (AUTO_INCREMENT)
+   - nom (VARCHAR)
+   - description (TEXT)
+   - niveauDanger (VARCHAR)
+   - type (VARCHAR)
+   - date (DATETIME)
+   - zone (INT)
+   - intensite_valeur (DECIMAL)
+   - intensite_unite (VARCHAR)
+
+3. **activities**
+   - id (AUTO_INCREMENT)
+   - nom (VARCHAR)
+   - type (VARCHAR)
+   - description (TEXT)
+   - dateEtHeure (DATETIME)
+   - danger (VARCHAR)
+   - nombreDeParticipants (INT)
+   - zone (INT)
+
+
+
+## 6 Déploiement : 
+
+Voir README.adoc
